@@ -24,7 +24,7 @@ def index():
     payload = json.dumps({
         "to_phonenumber": os.environ.get('receiver_number'),
         "sender_id": os.environ.get('sender_number'),
-        "message": "Hello, there this is a my Test URL \n https://www.ajua.com"
+        "message": "Visit our website to create a new accout \n https://www.ajua.com"
     })
     response = requests.request("POST", url, headers=headers, data=payload)
     # print(response.text)
@@ -82,7 +82,8 @@ def audio():
     return response.text
 
 
-    
+if __name__ == "__main__":
+    app.run(debug=True)
 
 
     
